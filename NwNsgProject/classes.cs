@@ -75,6 +75,7 @@ class DenormalizedRecord
         this.sourceAddress = tuple.sourceAddress;
         this.destinationAddress = tuple.destinationAddress;
         this.sourcePort = tuple.sourcePort;
+        this.transportProtocol = tuple.transportProtocol;
         this.destinationPort = tuple.destinationPort;
         this.deviceDirection = tuple.deviceDirection;
         this.deviceAction = tuple.deviceAction;
@@ -250,6 +251,7 @@ class DenormalizedRecord
         objectSize += this.sourcePort.Length + 10 + 6;
         objectSize += this.destinationPort.Length + 15 + 6;
         objectSize += this.deviceDirection.Length + 15 + 6;
+        objectSize += this.transportProtocol.Length + 15 + 6;
         objectSize += this.deviceAction.Length + 12 + 6;
         if (this.version >= 2.0)
         {
