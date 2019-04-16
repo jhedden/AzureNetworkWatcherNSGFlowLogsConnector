@@ -13,7 +13,7 @@ namespace nsgFunc
 {
     public partial class Util
     {
-        const int MAXTRANSMISSIONSIZE = 512 * 1024;
+        const int MAXTRANSMISSIONSIZE = 200000;
 
         public static string GetEnvironmentVariable(string name)
         {
@@ -35,7 +35,7 @@ namespace nsgFunc
             // ,{...}
             //
             // - OR -
-            //  
+            //
             // {...}   <-- note lack of leading comma
             // ,{...}
             //  ...
@@ -61,7 +61,7 @@ namespace nsgFunc
             {
                 sb.Append("{\"records\":[").Append(nsgMessagesString).Append("]}");
                 newClientContent = sb.ToString();
-            } 
+            }
             finally
             {
                 StringBuilderPool.Free(sb);
